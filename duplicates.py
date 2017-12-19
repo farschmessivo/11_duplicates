@@ -27,13 +27,13 @@ def join_dictionaries(dict1, dict2):
 
 
 def hashfile(path, blocksize=4096):
-    file = open(path, 'rb')
+    filename = open(path, 'rb')
     hasher = hashlib.md5()
-    buf = file.read(blocksize)
+    buf = filename.read(blocksize)
     while len(buf) > 0:
         hasher.update(buf)
-        buf = file.read(blocksize)
-    file.close()
+        buf = filename.read(blocksize)
+    filename.close()
     return hasher.hexdigest()
 
 
@@ -54,7 +54,7 @@ def print_results(dict1):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 0:
+    if sys.argv:
         duplicates = {}
         root = sys.argv[1]
         if os.path.exists(root):
