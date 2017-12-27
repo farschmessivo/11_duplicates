@@ -39,7 +39,7 @@ def hashfile(path, blocksize=4096):
 
 def print_results(dict1):
     results = list(filter(lambda x: len(x) > 1, dict1.values()))
-    if len(results) > 0:
+    if results:
         print('The following files are identical.')
         print('The name could differ, but the content is identical')
         print('___________________')
